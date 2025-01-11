@@ -1,0 +1,39 @@
+<template>
+  <DemoTemplate align-x="start">
+    <VerticalLayout>
+      <Button text="TEST me!" @click="onClick"/>
+    </VerticalLayout>
+  </DemoTemplate>
+</template>
+
+<script setup>
+import {Button} from "vue-components";
+import {VerticalLayout} from "vue-components";
+import DemoTemplate from "../DemoTemplate.vue";
+import {h, inject} from "vue";
+import {Confirmation} from "vue-components";
+import {useI18n} from "vue-i18n";
+
+const {t} = useI18n();
+
+const openModal = inject("openModal");
+
+const onClick = () => {
+  openModal((closeMethod) => createConfirmation(closeMethod));
+}
+const createConfirmation = (closeMethod) => {
+  return h(Confirmation, {
+    title: t('erase'),
+    component: h('div', null, t('confirm_delete')),
+    onConfirmation: () => {
+      // do whatever needs to be done
+      closeMethod();
+    },
+    onClose: closeMethod,
+  });
+}
+</script>
+
+<style scoped>
+</style>
+

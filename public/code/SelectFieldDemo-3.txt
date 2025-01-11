@@ -1,0 +1,8 @@
+<SelectField ref="field3" :initialValue="value3" :options="()=>{return ['Cat','Dog','Cow','Sheep'];}"/>
+[...]
+const value3 = ref('Elephant');
+const field3 = ref();
+
+const handleClick = () => {
+  value3.value = field3.value.doCommit().value;
+};

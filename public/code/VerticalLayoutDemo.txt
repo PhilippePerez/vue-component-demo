@@ -1,0 +1,23 @@
+<template>
+  <DemoTemplate src='/code/HorizontalLayoutDemo.vue' align-x="start">
+    <VerticalLayout>
+      <Label>Click the button below</Label>
+      <Button text="Click me!" @click="onClick"/>
+    </VerticalLayout>
+  </DemoTemplate>
+</template>
+
+<script setup>
+import {Button} from "vue-components";
+import {Label} from "vue-components";
+import {VerticalLayout} from "vue-components";
+import DemoTemplate from "../DemoTemplate.vue";
+
+const onClick = () => {
+  window.alert('Clicked');
+}
+</script>
+
+<style scoped>
+</style>
+

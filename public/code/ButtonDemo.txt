@@ -1,0 +1,20 @@
+<template>
+  <DemoTemplate src='/code/ButtonDemo.vue' align-x="center"  align-y="center" direction="x">
+    <Button text="Click me!" @click="onClick"/>
+    <Button variant="secondary" text="Click me!" @click="onClick"/>
+    <Button variant="danger" text="Click me!" @click="onClick"/>
+  </DemoTemplate>
+</template>
+
+<script setup>
+import {Button} from "vue-components";
+import DemoTemplate from "../DemoTemplate.vue";
+
+const onClick = () => {
+  window.alert('Clicked');
+}
+</script>
+
+<style scoped>
+</style>
+

@@ -1,0 +1,19 @@
+<template>
+  <DemoTemplate align-x="start" align-y="start">
+    <CodeFragment src="/code/TextFieldDemo-1.txt"/>
+    <ValueFeedback :model="value1">
+      <TextField v-model="value1"/>
+      <TextField v-model="value1" validationError="Syntax error"/>
+    </ValueFeedback>
+  </DemoTemplate>
+</template>
+
+<script setup>
+import {ref} from "vue";
+import CodeFragment from "../components/CodeFragment.vue";
+import DemoTemplate from "../DemoTemplate.vue";
+import ValueFeedback from "../components/ValueFeedback.vue";
+import {TextField} from "vue-component-toolkit/dist/vue-component-toolkit.js";
+
+const value1 = ref("John Moustache");
+</script>
