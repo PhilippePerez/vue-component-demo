@@ -12,4 +12,4 @@ Having built many such applications over the years, I decided to consolidate my 
 
 ## Getting Started
 
-You can explore the full source code for the showcase application on [GitHub](https://github.com/your-repository-link).
+You can explore the full source code for the showcase application on [GitHub](https://github.com/PhilippePerez/vue-component-demo).
