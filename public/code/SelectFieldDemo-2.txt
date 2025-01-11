@@ -1,0 +1,3 @@
+<SelectField v-model="value2" :options="()=>{return ['Cat','Dog','Cow','Sheep'];}"/>
+[...]
+const value2 = ref(null);

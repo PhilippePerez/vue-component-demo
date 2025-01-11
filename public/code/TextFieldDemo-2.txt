@@ -1,0 +1,24 @@
+<template>
+  <DemoTemplate align-x="start" align-y="start">
+    <CodeFragment src="/code/TextFieldDemo-2.txt"/>
+    <ValueFeedback :model="value2" @click="handleClick">
+      <TextField ref='field2' label="Full Name" :initial-value="value2"/>
+    </ValueFeedback>
+  </DemoTemplate>
+</template>
+
+<script setup>
+import {ref} from "vue";
+import CodeFragment from "../components/CodeFragment.vue";
+import DemoTemplate from "../DemoTemplate.vue";
+import ValueFeedback from "../components/ValueFeedback.vue";
+import {TextField} from "vue-component-toolkit/dist/vue-component-toolkit.js";
+
+const value2 = ref("123");
+
+const field2 = ref();
+const handleClick = () => {
+  value2.value = field2.value.doCommit().value;
+};
+</script>
+
