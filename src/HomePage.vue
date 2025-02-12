@@ -1,5 +1,5 @@
 <template>
-  <MainLayout title="Vue Components Showcase ( V 0.1.9 )">
+  <MainLayout title="Vue Components Showcase ( V 0.1.12 )">
     <HorizontalLayout style="flex-grow: 1;overflow: hidden;" align-y="stretch">
       <VerticalLayout align-x="stretch" align-y="start">
         <Button :key='rt.name' v-for="rt in routes" :off="route.name !== rt.name" :text="rt.label"

@@ -3,17 +3,18 @@
     <CodeFragment src="/code/SelectFieldDemo-1.txt"/>
     <ValueFeedback :model="value1">
       <SelectField v-model="value1"
-                   :options="['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']"/>
+                    :options="['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']"/>
     </ValueFeedback>
     <CodeFragment src="/code/SelectFieldDemo-2.txt"/>
     <ValueFeedback :model="value2">
-      <SelectField v-model="value2" :options="()=>{return ['Cat','Dog','Cow','Sheep'];}"/>
+      <SelectField v-model="value2"
+                    :options="(filter)=>{return ['Cat','Dog','Cow','Sheep'].filter(e=>e.toLowerCase().includes(filter));}"/>
     </ValueFeedback>
     <SelectField v-model="value2" :options="()=>{return ['Cat','Dog','Cow','Sheep'];}"
-                   validationError="Syntax error"/>
+                 validationError="Syntax error"/>
     <CodeFragment src="/code/SelectFieldDemo-3.txt"/>
     <ValueFeedback :model="value3" @click="handleClick">
-      <SelectField ref="field3" :initialValue="value3" :options="()=>{return ['Cat','Dog','Cow','Sheep'];}"/>
+      <SelectField ref="field3" :initialValue="value3" :options="(filter)=>{return ['Cat','Dog','Cow','Sheep'].filter(e=>e.toLowerCase().includes(filter));}"/>
     </ValueFeedback>
   </DemoTemplate>
 </template>

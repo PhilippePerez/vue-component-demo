@@ -1,5 +1,8 @@
 {
-  "author": "Philippe Perez",
+  "author": {
+    "name": "Philippe Perez",
+    "url": "https://philippe-perez.com/"
+  },
   "description": "",
   "name": "vue-components-demo",
   "private": false,
@@ -22,7 +25,7 @@
   "dependencies": {
     "highlight.js": "^11.11.1",
     "vue": "^3.5.12",
-    "vue-component-toolkit": "^0.1.9",
+    "vue-component-toolkit": "^0.1.12",
     "vue-i18n": "^11.0.0-beta.2",
     "vue-router": "^4.5.0"
   },
