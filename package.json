@@ -20,12 +20,14 @@
     "dev": "vite",
     "preview": "vite preview",
     "setup": "npm install",
-    "test": "vitest"
+    "test": "vitest",
+    "uninstall-library": "npm uninstall vue-component-toolkit",
+    "install-library": "npm install vue-component-toolkit"
   },
   "dependencies": {
     "highlight.js": "^11.11.1",
     "vue": "^3.5.12",
-    "vue-component-toolkit": "^0.1.12",
+    "vue-component-toolkit": "^0.1.13",
     "vue-i18n": "^11.0.0-beta.2",
     "vue-router": "^4.5.0"
   },
