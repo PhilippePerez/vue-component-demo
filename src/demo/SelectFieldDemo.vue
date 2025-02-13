@@ -17,13 +17,13 @@
     <Label :size=4 style="align-self: start">Server filtered options</Label>
     <CodeFragment src="/code/SelectFieldDemo-0.txt"/>
     <ValueFeedback :model="value4">
-      <SelectField2 v-model="value4" :options="getOptionListFromServer"/>
+      <SelectField v-model="value4" :options="getOptionListFromServer"/>
     </ValueFeedback>
 
     <Label :size=4 style="align-self: start">Json object options coming from a server</Label>
     <CodeFragment src="/code/SelectFieldDemo-0-1.txt"/>
     <ValueFeedback :model="value5">
-      <SelectField2 v-model="value5" :options="getDtoListFromServer" :option-label="(option)=>option.name"/>
+      <SelectField v-model="value5" :options="getDtoListFromServer" :option-label="(option)=>option.name"/>
     </ValueFeedback>
 
     <Label :size=4 style="align-self: start">Getting the value only upon commit</Label>
