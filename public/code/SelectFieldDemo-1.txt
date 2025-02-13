@@ -1,3 +1,13 @@
+<template>
+[...]
 <SelectField v-model="value1" :options="['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']"/>
 [...]
+</template>
+
+<script setup>
+import {SelectField} from "vue-component-toolkit/dist/vue-component-toolkit.js";
+[...]
 const value1 = ref("Monday");
+[...]
+</script>
+

@@ -1,4 +1,11 @@
+<template>
+[...]
 <SelectField ref="field3" :initialValue="value3" :options="()=>{return ['Cat','Dog','Cow','Sheep'];}"/>
+[...]
+</template>
+
+<script setup>
+import {SelectField} from "vue-component-toolkit/dist/vue-component-toolkit.js";
 [...]
 const value3 = ref('Elephant');
 const field3 = ref();
@@ -6,3 +13,5 @@ const field3 = ref();
 const handleClick = () => {
   value3.value = field3.value.doCommit().value;
 };
+[...]
+</script>

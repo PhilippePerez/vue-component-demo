@@ -1,3 +1,13 @@
-<SelectField v-model="value2" :options="()=>{return ['Cat','Dog','Cow','Sheep'];}"/>
+<template>
+[...]
+<SelectField v-model="value2" :options="(filter)=>{return ['Cat','Dog','Cow','Sheep'];}"/>
+[...]
+</template>
+
+<script setup>
+[...]
+import {SelectField} from "vue-component-toolkit/dist/vue-component-toolkit.js";
 [...]
 const value2 = ref(null);
+[...]
+</script>

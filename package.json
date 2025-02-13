@@ -7,7 +7,7 @@
   "name": "vue-components-demo",
   "private": false,
   "type": "module",
-  "version": "0.1.0",
+  "version": "0.1.14",
   "exports": {
     ".": {
       "import": "./dist/vue-components-demo.mjs",

@@ -1,0 +1,27 @@
+<template>
+[...]
+<SelectField2 v-model="value5" :options="getDtoListFromServer" :option-label="(option)=>option.name"/>
+[...]
+</template>
+
+[...]
+<script setup>
+import {SelectField} from "vue-component-toolkit/dist/vue-component-toolkit.js";
+[...]
+const value5 = ref(null);
+
+async function mockBackendApiMethod2() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve([{id: 1, name: "Apple"}, {id: 2, name: "Banana"}, {id: 3, name: "Cherry"}]);
+    }, 1000);
+  });
+}
+
+const getDtoListFromServer = async (filter) => {
+  return await mockBackendApiMethod2()
+}
+
+[...]
+</script>
+

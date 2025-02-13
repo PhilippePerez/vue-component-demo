@@ -1,0 +1,26 @@
+<template>
+[...]
+<SelectField2 v-model="value4" :options="getOptionListFromServer"/>
+[...]
+</template>
+
+[...]
+<script setup>
+import {SelectField} from "vue-component-toolkit/dist/vue-component-toolkit.js";
+[...]
+const value4 = ref(null);
+
+const getOptionListFromServer = async (filter) => {
+  return await mockBackendApiMethod()
+}
+
+async function mockBackendApiMethod() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(["Apple", "Banana", "Cherry"]);
+    }, 1000);
+  });
+}
+[...]
+</script>
+
