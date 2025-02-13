@@ -1,6 +1,6 @@
 <template>
 [...]
-<SelectField2 v-model="value4" :options="getOptionListFromServer"/>
+<SelectField v-model="value4" :options="getOptionListFromServer"/>
 [...]
 </template>
 
