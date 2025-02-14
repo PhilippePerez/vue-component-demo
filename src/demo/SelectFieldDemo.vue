@@ -58,28 +58,31 @@ const handleClick = () => {
   value3.value = field3.value.doCommit().value;
 };
 
-async function mockBackendApiMethod() {
+async function mockBackendApiMethod(filter) {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(["Apple", "Banana", "Cherry"]);
+      resolve(["Apple", "Banana", "Cherry"].filter(e => e.toLowerCase().includes(filter)));
     }, 1000);
   });
 }
 
-async function mockBackendApiMethod2() {
+async function mockBackendApiMethod2(filter) {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve([{id: 1, name: "Apple"}, {id: 2, name: "Banana"}, {id: 3, name: "Cherry"}]);
+      resolve([{id: 1, name: "Apple"}, {id: 2, name: "Banana"}, {
+        id: 3,
+        name: "Cherry"
+      }].filter(e => e.name.toLowerCase().includes(filter)));
     }, 1000);
   });
 }
 
 const getOptionListFromServer = async (filter) => {
-  return await mockBackendApiMethod()
+  return await mockBackendApiMethod(filter)
 }
 
 const getDtoListFromServer = async (filter) => {
-  return await mockBackendApiMethod2()
+  return await mockBackendApiMethod2(filter)
 }
 
 </script>
