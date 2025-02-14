@@ -1,5 +1,6 @@
 <template>
   <DemoTemplate class='comp-form-demo bg-gray-100' align-x="center" align-y="center">
+    <Label :size=4 style="align-self: start">Accessing form data after a user commit action</Label>
     <ValueFeedback class="feedback" :model="value" @click="handleSubmit">
       <CodeFragment src="/code/FormDemo.txt"/>
       <Form ref="formField"
@@ -14,12 +15,14 @@
             :initialValue="value"
       />
     </ValueFeedback>
+    <Label :size=4 style="align-self: start">Accessing form data in real time</Label>
     <ValueFeedback class="feedback" :model="value2">
       <Form :entries="[{path:'firstName',label:'First Name',props:{placeholder:'Paul',autocomplete:'off'}}]"
             :value="{firstName:'Mike'}"
             v-model="value2"
       />
     </ValueFeedback>
+    <Label :size=4 style="align-self: start">Form error handling</Label>
     <ValueFeedback class="feedback" :model="value3">
       <Form :entries="[
             {path:'firstName',label:'First Name',props:{placeholder:'Jason',autocomplete:'off'}},
@@ -38,7 +41,7 @@ import DemoTemplate from "../DemoTemplate.vue";
 import {ref} from "vue";
 import ValueFeedback from "../components/ValueFeedback.vue";
 import CodeFragment from "../components/CodeFragment.vue";
-import {SelectField, Form, VerticalFormLayout} from "vue-component-toolkit/dist/vue-component-toolkit.js";
+import {Form, VerticalFormLayout, Label} from "vue-component-toolkit/dist/vue-component-toolkit.js";
 
 const formField = ref();
 const handleSubmit = () => {
