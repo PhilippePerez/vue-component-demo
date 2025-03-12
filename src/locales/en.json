@@ -1,4 +1,7 @@
 {
+  "camera_capture__capture": "Capture",
+  "camera_capture__retake": "Retake",
+  "camera_capture__upload": "Upload",
   "cancel": "Cancel",
   "confirm_delete": "Do you really want to delete it?",
   "erase": "Delete",

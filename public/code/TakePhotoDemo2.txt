@@ -1,0 +1,19 @@
+<template>
+[...]
+    <TakePhoto ref="takePhoto2" button-overlay v-model="photo2" :uploadHandler="uploadHandler"/>
+    <VerticalLayout>
+      <img :src="photo2"/>
+    </VerticalLayout>
+[...]
+</template>
+
+<script setup>
+[...]
+import TakePhoto from "../components/TakePhoto.vue";
+import {HorizontalLayout, Button, VerticalLayout, Label} from "vue-component-toolkit/dist/vue-component-toolkit.js";
+[...]
+const photo2 = ref(null);
+const takePhoto2 = ref(null);
+[...]
+</script>
+

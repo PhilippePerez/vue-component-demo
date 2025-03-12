@@ -1,0 +1,5 @@
+<template>
+[...]
+      <TakePhoto button-overlay :button-text="false"/>
+[...]
+</template>

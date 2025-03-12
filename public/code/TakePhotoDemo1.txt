@@ -1,0 +1,23 @@
+<template>
+[...]
+    <TakePhoto ref="takePhoto1" button-overlay :checkPhoto="false" v-model="photo1"/>
+    <VerticalLayout>
+      <img :src="photo1"/>
+    </VerticalLayout>
+[...]
+</template>
+
+<script setup>
+[...]
+import TakePhoto from "../components/TakePhoto.vue";
+import {HorizontalLayout, Button, VerticalLayout, Label} from "vue-component-toolkit/dist/vue-component-toolkit.js";
+[...]
+const photo1 = ref(null);
+const takePhoto1 = ref(null);
+
+const takeOneMorePicture = () => {
+  takePhoto1.value.reset();
+}
+[...]
+</script>
+

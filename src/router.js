@@ -15,8 +15,9 @@ const routes = [
     {path: '/select', component: HomePage, name: 'select'},
     {path: '/side-panel', component: HomePage, name: 'side-panel'},
     {path: '/tabs', component: HomePage, name: 'tabs'},
-    {path: '/text', component: HomePage, name: 'text'},
+    {path: '/take-photo', component: HomePage, name: 'take-photo'},
     {path: '/test', component: TestPage, name: 'test'},
+    {path: '/text', component: HomePage, name: 'text'},
     {path: '/vertical-layout', component: HomePage, name: 'vertical-layout'},
 ];
 

@@ -1,5 +1,5 @@
 <template>
-  <MainLayout title="Vue Components Showcase ( V 0.1.20)">
+  <MainLayout title="Vue Components Showcase ( V 0.1.21)">
     <HorizontalLayout style="flex-grow: 1;overflow: hidden;" align-y="stretch">
       <VerticalLayout align-x="stretch" align-y="start">
         <Button :key='rt.name' v-for="rt in routes" :off="route.name !== rt.name" :text="rt.label"
@@ -35,6 +35,7 @@ import TabDemo from "./demo/TabsDemo.vue";
 import MenuDemo from "./demo/MenuDemo.vue";
 import ReadMe from "./ReadMe.vue";
 import GridDemo from "./demo/GridDemo.vue";
+import TakePhotoDemo from "./demo/TakePhotoDemo.vue";
 
 const routes = [
   {name: 'button', label: 'Button', component: ButtonDemo},
@@ -48,6 +49,7 @@ const routes = [
   {name: 'select', label: 'Select', component: SelectFieldDemo},
   {name: 'side-panel', label: 'SidePanel', component: SidePanelDemo},
   {name: 'tabs', label: 'Tabs', component: TabDemo},
+  {name: 'take-photo', label: 'Take Photo', component: TakePhotoDemo},
   {name: 'text', label: 'Text', component: TextFieldDemo},
   {name: 'vertical-layout', label: 'Vertical Layout', component: VerticalLayoutDemo},
 ];
