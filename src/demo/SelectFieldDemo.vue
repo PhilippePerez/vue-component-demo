@@ -34,7 +34,7 @@
     </ValueFeedback>
 
     <Label :size=4 style="align-self: start">Validation error state</Label>
-    <SelectField v-model="value2" :options="()=>{return ['Cat','Dog','Cow','Sheep'];}"
+    <SelectField v-model="value6" :options="()=>{return ['Cat','Dog','Cow','Sheep'];}"
                  validationError="Syntax error"/>
   </DemoTemplate>
 </template>
@@ -52,6 +52,7 @@ const value2 = ref(null);
 const value3 = ref('Elephant');
 const value4 = ref(null);
 const value5 = ref(null);
+const value6 = ref(null);
 const field3 = ref();
 
 const handleClick = () => {
