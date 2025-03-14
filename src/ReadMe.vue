@@ -7,7 +7,7 @@
     </p>
   </VerticalLayout>
 </template>
-<script setup lang="ts">
+<script setup>
 import {VerticalLayout} from "vue-component-toolkit/dist/vue-component-toolkit.js";
 
 </script>

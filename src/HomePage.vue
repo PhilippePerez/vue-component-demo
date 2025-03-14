@@ -36,8 +36,10 @@ import MenuDemo from "./demo/MenuDemo.vue";
 import ReadMe from "./ReadMe.vue";
 import GridDemo from "./demo/GridDemo.vue";
 import TakePhotoDemo from "./demo/TakePhotoDemo.vue";
+import AccordionDemo from "./demo/AccordionDemo.vue";
 
 const routes = [
+  {name: 'accordion', label: 'Accordion', component: AccordionDemo},
   {name: 'button', label: 'Button', component: ButtonDemo},
   {name: 'confirmation', label: 'Confirmation', component: ConfirmationDemo},
   {name: 'dialog', label: 'Dialog', component: DialogDemo},

@@ -1,43 +1,57 @@
 <template>
   <DemoTemplate align-y="start">
-    <Label :size=4 style="align-self: start">Picture goes into a variable</Label>
-    <CodeFragment src="/code/TakePhotoDemo1.txt"/>
-    <VerticalLayout>
-      <HorizontalLayout align-y="center">
-        <TakePhoto ref="takePhoto1" button-overlay :checkPhoto="false" v-model="photo1"/>
+
+    <Accordion style="align-self: stretch;flex-grow: 1" :selected="0">
+      <Panel text="Getting the a photo into v-model">
+        <CodeFragment src="/code/TakePhotoDemo1.txt"/>
         <VerticalLayout>
-          <img :src="photo1"/>
+          <HorizontalLayout align-y="center">
+            <TakePhoto ref="takePhoto1" button-overlay :checkPhoto="false" v-model="photo1"/>
+            <VerticalLayout>
+              <img :src="photo1"/>
+            </VerticalLayout>
+          </HorizontalLayout>
+          <Button v-if="photo1" text='Take another picture' @click="takeOneMorePicture"/>
         </VerticalLayout>
-      </HorizontalLayout>
-      <Button v-if="photo1" text='Take another picture' @click="takeOneMorePicture"/>
-    </VerticalLayout>
-    <Label :size=4 style="align-self: start">No button overlay</Label>
-    <CodeFragment src="/code/TakePhotoDemo2.txt"/>
-    <VerticalLayout>
-      <HorizontalLayout align-y="center">
-        <TakePhoto ref="takePhoto2" button-overlay v-model="photo2" :uploadHandler="uploadHandler"/>
+      </Panel>
+      <Panel text="Getting the a photo as datauri for upload">
+        <CodeFragment src="/code/TakePhotoDemo2.txt"/>
         <VerticalLayout>
-          <img :src="photo2"/>
+          <HorizontalLayout align-y="center">
+            <TakePhoto ref="takePhoto2" button-overlay v-model="photo2" :uploadHandler="uploadHandler"/>
+            <VerticalLayout>
+              <img :src="photo2"/>
+            </VerticalLayout>
+          </HorizontalLayout>
         </VerticalLayout>
-      </HorizontalLayout>
-    </VerticalLayout>
-    <Label :size=4 style="align-self: start">Icons instead of buttons</Label>
-    <CodeFragment src="/code/TakePhotoDemo3.txt"/>
-    <VerticalLayout>
-      <TakePhoto button-overlay :button-text="false"/>
-    </VerticalLayout>
-    <Label :size=4 style="align-self: start">Buttons without text</Label>
-    <CodeFragment src="/code/TakePhotoDemo4.txt"/>
-    <VerticalLayout>
-      <TakePhoto :button-text="false"/>
-    </VerticalLayout>
+      </Panel>
+      <Panel text="Icons for controls">
+        <CodeFragment src="/code/TakePhotoDemo3.txt"/>
+        <VerticalLayout>
+          <TakePhoto button-overlay :button-text="false"/>
+        </VerticalLayout>
+      </Panel>
+      <Panel text="No overlay for controls">
+        <CodeFragment src="/code/TakePhotoDemo4.txt"/>
+        <VerticalLayout>
+          <TakePhoto :button-text="false"/>
+        </VerticalLayout>
+      </Panel>
+    </Accordion>
   </DemoTemplate>
 </template>
 
 <script setup>
 import DemoTemplate from "../DemoTemplate.vue";
 import {ref} from "vue";
-import {HorizontalLayout, Button, VerticalLayout, Label,TakePhoto} from "vue-component-toolkit/dist/vue-component-toolkit.js";
+import {
+  HorizontalLayout,
+  Button,
+  VerticalLayout,
+  Accordion,
+  Panel,
+  TakePhoto
+} from "vue-component-toolkit/dist/vue-component-toolkit.js";
 import CodeFragment from "../components/CodeFragment.vue";
 
 const photo1 = ref(null);
@@ -46,7 +60,7 @@ const photo2 = ref(null);
 const takePhoto2 = ref(null);
 
 const uploadHandler = (dataUriImage) => {
-  window.alert('ok');
+  window.alert('I got the image but you will have to implement the backend to process it ;-)');
 }
 const takeOneMorePicture = () => {
   takePhoto1.value.reset();

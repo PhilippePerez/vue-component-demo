@@ -1,5 +1,6 @@
 {
   "camera_capture__capture": "Capturer",
+  "camera_capture__no_camera": "No camera detected",
   "camera_capture__retake": "Reprendre Photo",
   "camera_capture__upload": "Envoyer Photo",
   "cancel": "Annuler",

@@ -4,6 +4,7 @@ import TestPage from "./demo/TestPage.vue";
 
 const routes = [
     {path: '/', component: HomePage, name: 'home'},
+    {path: '/accordion', component: HomePage, name: 'accordion'},
     {path: '/button', component: HomePage, name: 'button'},
     {path: '/confirmation', component: HomePage, name: 'confirmation'},
     {path: '/dialog', component: HomePage, name: 'dialog'},

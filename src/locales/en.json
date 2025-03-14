@@ -1,5 +1,6 @@
 {
   "camera_capture__capture": "Capture",
+  "camera_capture__no_camera": "No camera detected",
   "camera_capture__retake": "Retake",
   "camera_capture__upload": "Upload",
   "cancel": "Cancel",
