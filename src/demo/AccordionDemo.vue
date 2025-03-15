@@ -1,6 +1,6 @@
 <template>
   <DemoTemplate align-y="start">
-    <CodeFragment src="/code/According.txt"/>
+    <CodeFragment src="/code/AccordionDemo.txt"/>
     <Accordion style="align-self: stretch;" :selected="0">
       <Panel text="What is Lorem Ipsum?">
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
