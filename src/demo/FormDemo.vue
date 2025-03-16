@@ -41,7 +41,7 @@ import DemoTemplate from "../DemoTemplate.vue";
 import {ref} from "vue";
 import ValueFeedback from "../components/ValueFeedback.vue";
 import CodeFragment from "../components/CodeFragment.vue";
-import {Form, VerticalFormLayout, Label} from "vue-component-toolkit/dist/vue-component-toolkit.js";
+import {Form, VerticalFormLayout, Label, SelectField} from "vue-component-toolkit/dist/vue-component-toolkit.js";
 
 const formField = ref();
 const handleSubmit = () => {

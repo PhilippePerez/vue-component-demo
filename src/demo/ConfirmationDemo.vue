@@ -18,6 +18,7 @@ const openModal = inject("openModal");
 const openDialog = () => {
   openModal((closeMethod) => createConfirmation(closeMethod));
 }
+
 const createConfirmation = (closeMethod) => {
   return h(Confirmation, {
     title: t('erase'),

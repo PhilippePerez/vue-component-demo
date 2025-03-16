@@ -27,11 +27,6 @@
         </Tab>
       </Tabs>
     </Section>
-    <Section title="Closeable tabs">
-      <CodeFragment src="/code/TabsDemo2.txt"/>
-      <Button text="New tab" @click="addTab" style="align-self: start"/>
-      <Tabs class="bg-gray-100" style="align-self: stretch;" :closeable="validator" v-model="tabs"/>
-    </Section>
   </DemoTemplate>
 </template>
 
@@ -43,50 +38,4 @@ import {
   Tab, Confirmation,
 } from "vue-component-toolkit/dist/vue-component-toolkit.js";
 import Section from "../components/Section.vue";
-import {inject, ref} from "vue";
-
-const {t} = useI18n();
-
-import {h} from "vue";
-import LoremWhat from "./tabs/LoremWhat.vue";
-import LoremWhy from "./tabs/LoremWhy.vue";
-import {useI18n} from "vue-i18n";
-import GenericTab from "./tabs/GenericTab.vue";
-
-const tabs = ref([
-  {key: 'what', text: "What is Lorem Ipsum?", component: LoremWhat, selected: true},
-  {key: 'why', text: "Why do we use it?", component: LoremWhy}
-]);
-
-const createConfirmation = (key, closeMethod) => {
-  return h(Confirmation, {
-    title: t('confirmation'),
-    component: h('div', null, t('close_tab') + ' \'' + key + '\''),
-    onConfirmation: () => {
-      closeMethod(true);
-    },
-    onClose: () => {
-      closeMethod(false);
-    }
-  });
-}
-
-const openModal = inject("openModal");
-const validator = (tab, closeTab) => {
-  openModal((closeDialog) => createConfirmation(tab.key, (confirmed) => {
-    closeDialog();
-    if (confirmed) {
-      closeTab();
-    }
-  }));
-}
-
-const addTab = () => {
-  const now = Date.now();
-  tabs.value.push({
-    key: 'key' + now,
-    text: "New tab " + now,
-    component: GenericTab
-  });
-};
 </script>

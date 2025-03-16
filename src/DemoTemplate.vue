@@ -3,7 +3,7 @@
     <HorizontalLayout class="demo-panel" v-if="direction==='x'" align-x="center" style="flex-grow: 1">
       <slot/>
     </HorizontalLayout>
-    <VerticalLayout class="demo-panel" v-if="direction==='y'" align-x="center" align-y="start"
+    <VerticalLayout class="demo-panel" v-if="direction==='y'" align-x="start" align-y="start"
                     :style="{'flex-grow': 1, ...(scroll?{}:{'align-self': 'stretch'})}">
       <slot/>
     </VerticalLayout>
