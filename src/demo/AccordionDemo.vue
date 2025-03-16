@@ -1,5 +1,5 @@
 <template>
-  <DemoTemplate align-y="start">
+  <DemoTemplate :padding="false" align-y="start">
     <CodeFragment src="/code/AccordionDemo.txt"/>
     <Accordion style="align-self: stretch;" :selected="0">
       <Panel text="What is Lorem Ipsum?">

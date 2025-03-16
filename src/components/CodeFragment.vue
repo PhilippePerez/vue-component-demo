@@ -22,7 +22,7 @@ const props = defineProps({
   },
   height: {
     type: String,
-    default: '200px',
+    default: '208px',
     required: false
   },
 });

@@ -1,8 +1,8 @@
 <template>
   <DemoTemplate align-x="start">
     <CodeFragment src="/code/SidePanelDemo.txt"/>
-    <VerticalLayout style="flex-grow: 1;">
-      <HorizontalLayout>
+    <VerticalLayout :padding="false" style="flex-grow: 1;">
+      <HorizontalLayout :padding="false">
         <Button text="West" @click="setWest"/>
         <Button text="East" @click="setEast"/>
         <Button text="North" @click="setNorth"/>

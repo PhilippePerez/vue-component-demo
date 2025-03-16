@@ -1,7 +1,7 @@
 <template>
-  <DemoTemplate class="comp-button-demo" align-x="center">
+  <DemoTemplate :padding="false" class="comp-button-demo" align-x="center">
     <CodeFragment src="/code/ButtonDemo.txt"/>
-    <HorizontalLayout>
+    <HorizontalLayout :padding="false">
       <Button text="Click me!" @click="onClick"/>
       <Button variant="secondary" text="Click me!" @click="onClick"/>
       <Button variant="danger" text="Click me!" @click="onClick"/>

@@ -1,48 +1,54 @@
 <template>
   <DemoTemplate align-x="start" align-y="start" :scroll="true">
-    <Label :size=4 style="align-self: start">Hard-coded options</Label>
-    <CodeFragment src="/code/SelectFieldDemo-1.txt"/>
-    <ValueFeedback :model="value1">
-      <SelectField v-model="value1"
-                   :options="['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']"/>
-    </ValueFeedback>
+    <Section title="Hard-coded options">
+      <CodeFragment src="/code/SelectFieldDemo-1.txt"/>
+      <ValueFeedback :model="value1">
+        <SelectField v-model="value1"
+                     :options="['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']"/>
+      </ValueFeedback>
+    </Section>
 
-    <Label :size=4 style="align-self: start">Local filtered options</Label>
-    <CodeFragment src="/code/SelectFieldDemo-2.txt"/>
-    <ValueFeedback :model="value2">
-      <SelectField v-model="value2"
-                   :options="(filter)=>{return ['Cat','Dog','Cow','Sheep'].filter(e=>e.toLowerCase().includes(filter));}"/>
-    </ValueFeedback>
+    <Section title="Local filtered options">
+      <CodeFragment src="/code/SelectFieldDemo-2.txt"/>
+      <ValueFeedback :model="value2">
+        <SelectField v-model="value2"
+                     :options="(filter)=>{return ['Cat','Dog','Cow','Sheep'].filter(e=>e.toLowerCase().includes(filter));}"/>
+      </ValueFeedback>
+    </Section>
 
-    <Label :size=4 style="align-self: start">Server filtered options</Label>
-    <CodeFragment src="/code/SelectFieldDemo-0.txt"/>
-    <ValueFeedback :model="value4">
-      <SelectField v-model="value4" :options="getOptionListFromServer"/>
-    </ValueFeedback>
+    <Section title="Server filtered options">
+      <CodeFragment src="/code/SelectFieldDemo-0.txt"/>
+      <ValueFeedback :model="value4">
+        <SelectField v-model="value4" :options="getOptionListFromServer"/>
+      </ValueFeedback>
+    </Section>
 
-    <Label :size=4 style="align-self: start">Json object options coming from a server</Label>
-    <CodeFragment src="/code/SelectFieldDemo-0-1.txt"/>
-    <ValueFeedback :model="value5">
-      <SelectField v-model="value5" :options="getDtoListFromServer" :option-label="(option)=>option.name"/>
-    </ValueFeedback>
+    <Section title="Json object options coming from a server">
+      <CodeFragment src="/code/SelectFieldDemo-0-1.txt"/>
+      <ValueFeedback :model="value5">
+        <SelectField v-model="value5" :options="getDtoListFromServer" :option-label="(option)=>option.name"/>
+      </ValueFeedback>
+    </Section>
 
-    <Label :size=4 style="align-self: start">Getting the value only upon commit</Label>
-    <CodeFragment src="/code/SelectFieldDemo-3.txt"/>
-    <ValueFeedback :model="value3" @click="handleClick">
-      <SelectField ref="field3" :initialValue="value3"
-                   :options="(filter)=>{return ['Cat','Dog','Cow','Sheep'].filter(e=>e.toLowerCase().includes(filter));}"/>
-    </ValueFeedback>
+    <Section title="Getting the value only upon commit">
+      <CodeFragment src="/code/SelectFieldDemo-3.txt"/>
+      <ValueFeedback :model="value3" @click="handleClick">
+        <SelectField ref="field3" :initialValue="value3"
+                     :options="(filter)=>{return ['Cat','Dog','Cow','Sheep'].filter(e=>e.toLowerCase().includes(filter));}"/>
+      </ValueFeedback>
+    </Section>
 
-    <Label :size=4 style="align-self: start">Validation error state</Label>
-    <SelectField v-model="value6" :options="()=>{return ['Cat','Dog','Cow','Sheep'];}"
-                 validationError="Syntax error"/>
+    <Section title="Validation error state">
+      <SelectField v-model="value6" :options="()=>{return ['Cat','Dog','Cow','Sheep'];}"
+                   validationError="Syntax error"/>
+    </Section>
   </DemoTemplate>
 </template>
 
 <script setup>
 import {ref} from "vue";
 import DemoTemplate from "../DemoTemplate.vue";
-import {SelectField} from "vue-component-toolkit/dist/vue-component-toolkit.js";
+import {SelectField, Section} from "vue-component-toolkit/dist/vue-component-toolkit.js";
 import {Label} from "vue-component-toolkit/dist/vue-component-toolkit.js";
 import CodeFragment from "../components/CodeFragment.vue";
 import ValueFeedback from "../components/ValueFeedback.vue";

@@ -1,8 +1,8 @@
 <template>
-  <VerticalLayout class="comp-value-feedback">
-     <slot name="code"/>
+  <VerticalLayout :padding="false" class="comp-value-feedback">
+    <slot name="code"/>
     <slot/>
-    <HorizontalLayout align-y="center" style="justify-content: space-between;align-self: stretch">
+    <HorizontalLayout :padding="false" align-y="center" style="justify-content: space-between;align-self: stretch">
       <Button v-if="commit" text="Commit" @click="emit('click')"/>
       Value : {{ model }}
     </HorizontalLayout>

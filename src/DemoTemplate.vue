@@ -1,9 +1,10 @@
 <template>
-  <HorizontalLayout class="com-demo-template" style="flex-grow: 1;position: relative" align-y="stretch">
-    <HorizontalLayout class="demo-panel" v-if="direction==='x'" align-x="center" style="flex-grow: 1">
+  <HorizontalLayout :padding="padding" class="com-demo-template" style="flex-grow: 1;position: relative"
+                    align-y="stretch">
+    <HorizontalLayout :padding="false" class="demo-panel" v-if="direction==='x'" align-x="center" style="flex-grow: 1">
       <slot/>
     </HorizontalLayout>
-    <VerticalLayout class="demo-panel" v-if="direction==='y'" align-x="start" align-y="start"
+    <VerticalLayout :padding="false" class="demo-panel" v-if="direction==='y'" align-x="start" align-y="start"
                     :style="{'flex-grow': 1, ...(scroll?{}:{'align-self': 'stretch'})}">
       <slot/>
     </VerticalLayout>
@@ -22,6 +23,11 @@ defineProps({
   direction: {
     type: String,
     default: 'y',
+    required: false
+  },
+  padding: {
+    type: Boolean,
+    default: true,
     required: false
   },
   scroll: {

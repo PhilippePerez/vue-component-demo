@@ -1,40 +1,47 @@
 <template>
   <DemoTemplate align-y="start">
-
     <Accordion style="align-self: stretch;flex-grow: 1" :selected="0">
       <Panel text="Getting the a photo into v-model">
-        <CodeFragment src="/code/TakePhotoDemo1.txt"/>
-        <VerticalLayout>
-          <HorizontalLayout align-y="center">
-            <TakePhoto ref="takePhoto1" button-overlay :checkPhoto="false" v-model="photo1"/>
-            <VerticalLayout>
-              <img :src="photo1"/>
-            </VerticalLayout>
-          </HorizontalLayout>
-          <Button v-if="photo1" text='Take another picture' @click="takeOneMorePicture"/>
+        <VerticalLayout :padding="false">
+          <CodeFragment src="/code/TakePhotoDemo1.txt"/>
+          <VerticalLayout :padding="false">
+            <HorizontalLayout :padding="false" align-y="center">
+              <TakePhoto ref="takePhoto1" button-overlay :checkPhoto="false" v-model="photo1"/>
+              <VerticalLayout>
+                <img :src="photo1"/>
+              </VerticalLayout>
+            </HorizontalLayout>
+            <Button v-if="photo1" text='Take another picture' @click="takeOneMorePicture"/>
+          </VerticalLayout>
         </VerticalLayout>
       </Panel>
       <Panel text="Getting the a photo as datauri for upload">
-        <CodeFragment src="/code/TakePhotoDemo2.txt"/>
-        <VerticalLayout>
-          <HorizontalLayout align-y="center">
-            <TakePhoto ref="takePhoto2" button-overlay v-model="photo2" :uploadHandler="uploadHandler"/>
-            <VerticalLayout>
-              <img :src="photo2"/>
-            </VerticalLayout>
-          </HorizontalLayout>
+        <VerticalLayout :padding="false">
+          <CodeFragment src="/code/TakePhotoDemo2.txt"/>
+          <VerticalLayout :padding="false">
+            <HorizontalLayout :padding="false" align-y="center">
+              <TakePhoto ref="takePhoto2" button-overlay v-model="photo2" :uploadHandler="uploadHandler"/>
+              <VerticalLayout>
+                <img :src="photo2"/>
+              </VerticalLayout>
+            </HorizontalLayout>
+          </VerticalLayout>
         </VerticalLayout>
       </Panel>
       <Panel text="Icons for controls">
-        <CodeFragment src="/code/TakePhotoDemo3.txt"/>
-        <VerticalLayout>
-          <TakePhoto button-overlay :button-text="false"/>
+        <VerticalLayout :padding="false">
+          <CodeFragment src="/code/TakePhotoDemo3.txt"/>
+          <VerticalLayout :padding="false">
+            <TakePhoto button-overlay :button-text="false"/>
+          </VerticalLayout>
         </VerticalLayout>
       </Panel>
       <Panel text="No overlay for controls">
-        <CodeFragment src="/code/TakePhotoDemo4.txt"/>
-        <VerticalLayout>
-          <TakePhoto :button-text="false"/>
+        <VerticalLayout :padding="false">
+          <CodeFragment src="/code/TakePhotoDemo4.txt"/>
+          <VerticalLayout :padding="false">
+            <TakePhoto :button-text="false"/>
+          </VerticalLayout>
         </VerticalLayout>
       </Panel>
     </Accordion>

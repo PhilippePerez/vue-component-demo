@@ -1,5 +1,5 @@
 <template>
-  <DemoTemplate align-x="center">
+  <DemoTemplate :padding="false" align-x="center">
     <CodeFragment src="/code/ConfirmationDemo.txt"/>
     <Button text="Open a dialog" @click="openDialog"/>
   </DemoTemplate>

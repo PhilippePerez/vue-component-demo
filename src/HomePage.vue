@@ -1,11 +1,11 @@
 <template>
-  <MainLayout title="Vue Components Showcase ( V 0.1.25)">
+  <MainLayout title="Vue Components Showcase ( V 0.1.26)">
     <HorizontalLayout style="flex-grow: 1;overflow: hidden;" align-y="stretch">
-      <VerticalLayout align-x="stretch" align-y="start">
+      <VerticalLayout :padding="false" class='widget-list-panel' align-x="stretch">
         <Button :key='rt.name' v-for="rt in routes" :off="route.name !== rt.name" :text="rt.label"
                 @click="()=>{router.push({name: rt.name});}"/>
       </VerticalLayout>
-      <VerticalLayout class='right-panel' align-x="stretch" align-y="stretch">
+      <VerticalLayout :padding="false" class='right-panel' align-x="stretch" align-y="stretch">
         <component :is="getComponent"/>
       </VerticalLayout>
     </HorizontalLayout>
@@ -37,6 +37,7 @@ import ReadMe from "./ReadMe.vue";
 import GridDemo from "./demo/GridDemo.vue";
 import TakePhotoDemo from "./demo/TakePhotoDemo.vue";
 import AccordionDemo from "./demo/AccordionDemo.vue";
+import SectionDemo from "./demo/SectionDemo.vue";
 
 const routes = [
   {name: 'accordion', label: 'Accordion', component: AccordionDemo},
@@ -48,6 +49,7 @@ const routes = [
   {name: 'horizontal-layout', label: 'Horizontal Layout', component: HorizontalLayoutDemo},
   {name: 'label', label: 'Label', component: LabelDemo},
   {name: 'menu', label: 'Menu', component: MenuDemo},
+  {name: 'section', label: 'Section', component: SectionDemo},
   {name: 'select', label: 'Select', component: SelectFieldDemo},
   {name: 'side-panel', label: 'SidePanel', component: SidePanelDemo},
   {name: 'tabs', label: 'Tabs', component: TabDemo},
@@ -70,6 +72,14 @@ const getComponent = computed(() => {
 <style scoped>
 .right-panel {
   overflow-x: hidden;
+  overflow-y: auto;
   flex-grow: 1;
+}
+
+.widget-list-panel {
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex-shrink: 0;
+  padding-right: 16px;
 }
 </style>

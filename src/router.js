@@ -1,6 +1,5 @@
 import {createRouter, createWebHistory} from 'vue-router';
 import HomePage from './HomePage.vue';
-import TestPage from "./demo/TestPage.vue";
 
 const routes = [
     {path: '/', component: HomePage, name: 'home'},
@@ -13,11 +12,11 @@ const routes = [
     {path: '/horizontal-layout', component: HomePage, name: 'horizontal-layout'},
     {path: '/label', component: HomePage, name: 'label'},
     {path: '/menu', component: HomePage, name: 'menu'},
+    {path: '/section', component: HomePage, name: 'section'},
     {path: '/select', component: HomePage, name: 'select'},
     {path: '/side-panel', component: HomePage, name: 'side-panel'},
     {path: '/tabs', component: HomePage, name: 'tabs'},
     {path: '/take-photo', component: HomePage, name: 'take-photo'},
-    {path: '/test', component: TestPage, name: 'test'},
     {path: '/text', component: HomePage, name: 'text'},
     {path: '/vertical-layout', component: HomePage, name: 'vertical-layout'},
 ];

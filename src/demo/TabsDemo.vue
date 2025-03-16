@@ -1,6 +1,6 @@
 <template>
   <DemoTemplate align-y="start">
-    <Section title="Basic tabs">
+    <Section title="Static tabs">
       <CodeFragment src="/code/TabsDemo1.txt"/>
       <Tabs style="align-self: stretch;">
         <Tab text="What is Lorem Ipsum?">
@@ -27,7 +27,7 @@
         </Tab>
       </Tabs>
     </Section>
-    <Section title="Closeable tabs">
+    <Section title="Dynamic tabs">
       <CodeFragment src="/code/TabsDemo2.txt"/>
       <Button text="New tab" @click="addTab" style="align-self: start"/>
       <Tabs class="bg-gray-100" style="align-self: stretch;" :closeable="validator" v-model="tabs"/>
@@ -42,7 +42,7 @@ import {
   Button, Tabs,
   Tab, Confirmation,
 } from "vue-component-toolkit/dist/vue-component-toolkit.js";
-import Section from "../components/Section.vue";
+import Section from "../../../widgets/vue-widgets/src/components/layout/Section.vue";
 import {inject, ref} from "vue";
 
 const {t} = useI18n();
