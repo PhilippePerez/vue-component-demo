@@ -20,7 +20,6 @@
     <Section title="Accessing form data in real time">
       <ValueFeedback class="feedback" :model="value2">
         <Form :entries="[{path:'firstName',label:'First Name',props:{placeholder:'Paul',autocomplete:'off'}}]"
-              :value="{firstName:'Mike'}"
               v-model="value2"
         />
       </ValueFeedback>

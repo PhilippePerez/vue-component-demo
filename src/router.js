@@ -15,6 +15,7 @@ const routes = [
     {path: '/section', component: HomePage, name: 'section'},
     {path: '/select', component: HomePage, name: 'select'},
     {path: '/side-panel', component: HomePage, name: 'side-panel'},
+    {path: '/stepflow', component: HomePage, name: 'stepflow'},
     {path: '/tabs', component: HomePage, name: 'tabs'},
     {path: '/take-photo', component: HomePage, name: 'take-photo'},
     {path: '/text', component: HomePage, name: 'text'},

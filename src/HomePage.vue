@@ -1,5 +1,5 @@
 <template>
-  <MainLayout title="Vue Components Showcase ( V 0.1.26)">
+  <MainLayout title="Vue Components Showcase ( V 0.1.27)">
     <HorizontalLayout style="flex-grow: 1;overflow: hidden;" align-y="stretch">
       <VerticalLayout :padding="false" class='widget-list-panel' align-x="stretch">
         <Button :key='rt.name' v-for="rt in routes" :off="route.name !== rt.name" :text="rt.label"
@@ -38,6 +38,8 @@ import GridDemo from "./demo/GridDemo.vue";
 import TakePhotoDemo from "./demo/TakePhotoDemo.vue";
 import AccordionDemo from "./demo/AccordionDemo.vue";
 import SectionDemo from "./demo/SectionDemo.vue";
+import StepFlow from "../../widgets/vue-widgets/src/components/stepflow/StepFlow.vue";
+import StepFlowDemo from "./demo/StepFlowDemo.vue";
 
 const routes = [
   {name: 'accordion', label: 'Accordion', component: AccordionDemo},
@@ -52,6 +54,7 @@ const routes = [
   {name: 'section', label: 'Section', component: SectionDemo},
   {name: 'select', label: 'Select', component: SelectFieldDemo},
   {name: 'side-panel', label: 'SidePanel', component: SidePanelDemo},
+  {name: 'stepflow', label: 'Step flow', component: StepFlowDemo},
   {name: 'tabs', label: 'Tabs', component: TabDemo},
   {name: 'take-photo', label: 'Take Photo', component: TakePhotoDemo},
   {name: 'text', label: 'Text', component: TextFieldDemo},

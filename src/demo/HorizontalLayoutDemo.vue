@@ -53,7 +53,6 @@ import {Button, HorizontalLayout, VerticalLayout} from "vue-component-toolkit/di
 import DemoTemplate from "../DemoTemplate.vue";
 import CodeFragment from "../components/CodeFragment.vue";
 import Section from "../../../widgets/vue-widgets/src/components/layout/Section.vue";
-import VerticalLayoutDemo from "./VerticalLayoutDemo.vue";
 
 const onClick = () => {
   window.alert('Clicked');
