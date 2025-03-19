@@ -3,7 +3,7 @@
     <Section title="Accessing form data after a user commit action">
       <ValueFeedback class="feedback" :model="value" @click="handleSubmit">
         <CodeFragment src="/code/FormDemo.txt"/>
-        <Form ref="formField"
+        <Form ref="formField" class=" max-w-sm w-full"
               :entries="[
             {path:'firstName',label:'First Name',props:{placeholder:'Paul',autocomplete:'off'}},
         {path:'lastName',label:'Last Name',props:{placeholder:'Durand',autocomplete:'off'}},
@@ -19,7 +19,7 @@
 
     <Section title="Accessing form data in real time">
       <ValueFeedback class="feedback" :model="value2">
-        <Form :entries="[{path:'firstName',label:'First Name',props:{placeholder:'Paul',autocomplete:'off'}}]"
+        <Form class=" max-w-sm w-full" :entries="[{path:'firstName',label:'First Name',props:{placeholder:'Paul',autocomplete:'off'}}]"
               v-model="value2"
         />
       </ValueFeedback>
@@ -27,7 +27,7 @@
 
     <Section title="Form error handling">
       <ValueFeedback class="feedback" :model="value3">
-        <Form :entries="[
+        <Form class=" max-w-sm w-full" :entries="[
             {path:'firstName',label:'First Name',props:{placeholder:'Jason',autocomplete:'off'}},
             {path:'lastName',label:'Last Name',props:{placeholder:'Blaze',autocomplete:'off'}},
         ]"

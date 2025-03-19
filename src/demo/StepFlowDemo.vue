@@ -5,7 +5,7 @@
       <StepFlow ref="flow1" @select="(step,index)=>currentPanel={index:index,step:step}">
         <Step caption="Identity" :validator="validateStep1">
           <Card title="Please fill the form below" style="align-items: center;">
-            <Form
+            <Form class=" max-w-sm w-full"
                 border
                 :entries="[
                 {path:'firstName',label:'First Name',props:{placeholder:'Paul',autocomplete:'off'}},
@@ -23,7 +23,7 @@
         </Step>
         <Step caption="Skills" :validator="validateStep2">
           <Card title="Please fill the form below" style="align-items: center;">
-            <Form
+            <Form class=" max-w-sm w-full"
                 border
                 :entries="[
                 {path:'skill1',label:'Skill 1',props:{placeholder:'Singing',autocomplete:'off'}},
