@@ -49,7 +49,6 @@ import {
   Form,
   Section,
   VerticalFormLayout,
-  Label,
   SelectField
 } from "vue-component-toolkit/dist/vue-component-toolkit.js";
 
