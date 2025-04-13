@@ -44,6 +44,26 @@
           </VerticalLayout>
         </VerticalLayout>
       </Panel>
+      <Panel text="Aiming target overlay">
+        <VerticalLayout :padding="false">
+          <CodeFragment src="/code/TakePhotoDemo5.txt"/>
+          <VerticalLayout :padding="false">
+            <TakePhoto :button-text="false">
+              <template #target>
+                <CameraAimingTarget/>
+              </template>
+            </TakePhoto>
+          </VerticalLayout>
+        </VerticalLayout>
+      </Panel>
+      <Panel text="Framing ( Circle )">
+        <VerticalLayout :padding="false">
+          <CodeFragment src="/code/TakePhotoDemo6.txt"/>
+          <VerticalLayout :padding="false">
+            <TakePhoto :button-text="false" framing-circle/>
+          </VerticalLayout>
+        </VerticalLayout>
+      </Panel>
     </Accordion>
   </DemoTemplate>
 </template>
@@ -60,6 +80,7 @@ import {
   TakePhoto
 } from "vue-component-toolkit/dist/vue-component-toolkit.js";
 import CodeFragment from "../components/CodeFragment.vue";
+import CameraAimingTarget from "@/demo/takePhoto/CameraAimingTarget.vue";
 
 const photo1 = ref(null);
 const takePhoto1 = ref(null);

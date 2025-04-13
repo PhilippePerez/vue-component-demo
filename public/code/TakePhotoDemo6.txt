@@ -1,0 +1,5 @@
+<template>
+[...]
+            <TakePhotoV2 :button-text="false" framing-circle/>
+[...]
+</template>

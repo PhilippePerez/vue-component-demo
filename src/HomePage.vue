@@ -1,5 +1,5 @@
 <template>
-  <MainLayout title="Vue Components Showcase ( V 0.1.30 )">
+  <MainLayout title="Vue Components Showcase ( V 0.1.32 )">
     <HorizontalLayout style="flex-grow: 1;overflow: hidden;" align-y="stretch">
       <VerticalLayout :padding="false" class='widget-list-panel' align-x="stretch">
         <Button :key='rt.name' v-for="rt in routes" :off="route.name !== rt.name" :text="rt.label"
@@ -54,7 +54,7 @@ const routes = [
   {name: 'section', label: 'Section', component: SectionDemo},
   {name: 'select', label: 'Select', component: SelectFieldDemo},
   {name: 'side-panel', label: 'SidePanel', component: SidePanelDemo},
-  {name: 'split-layout', label: 'SplitLayout', component: SplitLayoutDemo},
+  {name: 'split-layout', label: 'Split Layout', component: SplitLayoutDemo},
   {name: 'stepflow', label: 'Step flow', component: StepFlowDemo},
   {name: 'tabs', label: 'Tabs', component: TabDemo},
   {name: 'take-photo', label: 'Take Photo', component: TakePhotoDemo},

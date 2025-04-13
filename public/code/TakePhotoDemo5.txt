@@ -1,0 +1,13 @@
+<template>
+[...]
+    <TakePhoto :button-text="false">
+      <template #target>
+        <CameraAimingTarget/>
+      </template>
+    </TakePhoto>
+[...]
+</template>
+
+<script setup>
+[...]
+</script>
