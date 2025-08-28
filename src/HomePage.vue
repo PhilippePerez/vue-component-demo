@@ -1,5 +1,5 @@
 <template>
-  <MainLayout title="Vue Components Showcase ( V 0.1.33 )">
+  <MainLayout title="Vue Components Showcase ( V 0.1.34 )">
     <HorizontalLayout style="flex-grow: 1;overflow: hidden;" align-y="stretch">
       <VerticalLayout :padding="false" class='widget-list-panel' align-x="stretch" align-y="stretch">
         <Accordion :selected="0" padding-off>
@@ -12,6 +12,12 @@
           <Panel text="Authentication">
             <VerticalLayout align-x="stretch" style="overflow-x:auto;">
               <Button :key='rt.name' v-for="rt in authentication_routes" :off="route.name !== rt.name" :text="rt.label"
+                      @click="()=>{router.push({name: rt.name});}"/>
+            </VerticalLayout>
+          </Panel>
+          <Panel text="Dashboard">
+            <VerticalLayout align-x="stretch" style="overflow-x:auto;">
+              <Button :key='rt.name' v-for="rt in dashboard_routes" :off="route.name !== rt.name" :text="rt.label"
                       @click="()=>{router.push({name: rt.name});}"/>
             </VerticalLayout>
           </Panel>
@@ -55,9 +61,11 @@ import StepFlowDemo from "./demo/StepFlowDemo.vue";
 import SplitLayoutDemo from "@/demo/SplitLayoutDemo.vue";
 import LoginDemo from "@/demo/LoginDemo.vue";
 import SignupDemo from "@/demo/SignupDemo.vue";
+import LinearGaugeDemo from "@/demo/LinearGaugeDemo.vue";
 
 const Category = {
   AUTHENTICATION: "authentication",
+  DASHBOARD: "dashboard",
   CORE: "core",
 };
 const routes = [
@@ -81,9 +89,11 @@ const routes = [
   {category: Category.CORE, name: 'take-photo', label: 'Take Photo', component: TakePhotoDemo},
   {category: Category.CORE, name: 'text', label: 'Text', component: TextFieldDemo},
   {category: Category.CORE, name: 'vertical-layout', label: 'Vertical Layout', component: VerticalLayoutDemo},
+  {category: Category.DASHBOARD, name: 'linear-gauge', label: 'Linear Gauge', component: LinearGaugeDemo},
 ];
-const core_routes = routes.filter(e => e.category === Category.CORE);
 const authentication_routes = routes.filter(e => e.category === Category.AUTHENTICATION);
+const core_routes = routes.filter(e => e.category === Category.CORE);
+const dashboard_routes = routes.filter(e => e.category === Category.DASHBOARD);
 const route = useRoute();
 const router = useRouter();
 
