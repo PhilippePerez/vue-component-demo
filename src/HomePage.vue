@@ -1,9 +1,21 @@
 <template>
-  <MainLayout title="Vue Components Showcase ( V 0.1.32 )">
+  <MainLayout title="Vue Components Showcase ( V 0.1.33 )">
     <HorizontalLayout style="flex-grow: 1;overflow: hidden;" align-y="stretch">
-      <VerticalLayout :padding="false" class='widget-list-panel' align-x="stretch">
-        <Button :key='rt.name' v-for="rt in routes" :off="route.name !== rt.name" :text="rt.label"
-                @click="()=>{router.push({name: rt.name});}"/>
+      <VerticalLayout :padding="false" class='widget-list-panel' align-x="stretch" align-y="stretch">
+        <Accordion :selected="0" padding-off>
+          <Panel text="Core">
+            <VerticalLayout align-x="stretch" style="overflow-x:auto;">
+              <Button :key='rt.name' v-for="rt in core_routes" :off="route.name !== rt.name" :text="rt.label"
+                      @click="()=>{router.push({name: rt.name});}"/>
+            </VerticalLayout>
+          </Panel>
+          <Panel text="Authentication">
+            <VerticalLayout align-x="stretch" style="overflow-x:auto;">
+              <Button :key='rt.name' v-for="rt in authentication_routes" :off="route.name !== rt.name" :text="rt.label"
+                      @click="()=>{router.push({name: rt.name});}"/>
+            </VerticalLayout>
+          </Panel>
+        </Accordion>
       </VerticalLayout>
       <VerticalLayout :padding="false" class='right-panel' align-x="stretch" align-y="stretch">
         <component :is="getComponent"/>
@@ -22,9 +34,10 @@ import LabelDemo from "./demo/LabelDemo.vue";
 import SidePanelDemo from "./demo/SidePanelDemo.vue";
 import VerticalLayoutDemo from "./demo/VerticalLayoutDemo.vue";
 import {
+  Accordion,
   Button,
   HorizontalLayout,
-  MainLayout,
+  MainLayout, Panel,
   VerticalLayout
 } from "vue-component-toolkit/dist/vue-component-toolkit.js";
 import {computed} from "vue";
@@ -40,27 +53,37 @@ import AccordionDemo from "./demo/AccordionDemo.vue";
 import SectionDemo from "./demo/SectionDemo.vue";
 import StepFlowDemo from "./demo/StepFlowDemo.vue";
 import SplitLayoutDemo from "@/demo/SplitLayoutDemo.vue";
+import LoginDemo from "@/demo/LoginDemo.vue";
+import SignupDemo from "@/demo/SignupDemo.vue";
 
+const Category = {
+  AUTHENTICATION: "authentication",
+  CORE: "core",
+};
 const routes = [
-  {name: 'accordion', label: 'Accordion', component: AccordionDemo},
-  {name: 'button', label: 'Button', component: ButtonDemo},
-  {name: 'confirmation', label: 'Confirmation', component: ConfirmationDemo},
-  {name: 'dialog', label: 'Dialog', component: DialogDemo},
-  {name: 'form', label: 'Form', component: FormDemo},
-  {name: 'grid', label: 'Grid', component: GridDemo},
-  {name: 'horizontal-layout', label: 'Horizontal Layout', component: HorizontalLayoutDemo},
-  {name: 'label', label: 'Label', component: LabelDemo},
-  {name: 'menu', label: 'Menu', component: MenuDemo},
-  {name: 'section', label: 'Section', component: SectionDemo},
-  {name: 'select', label: 'Select', component: SelectFieldDemo},
-  {name: 'side-panel', label: 'SidePanel', component: SidePanelDemo},
-  {name: 'split-layout', label: 'Split Layout', component: SplitLayoutDemo},
-  {name: 'stepflow', label: 'Step flow', component: StepFlowDemo},
-  {name: 'tabs', label: 'Tabs', component: TabDemo},
-  {name: 'take-photo', label: 'Take Photo', component: TakePhotoDemo},
-  {name: 'text', label: 'Text', component: TextFieldDemo},
-  {name: 'vertical-layout', label: 'Vertical Layout', component: VerticalLayoutDemo},
+  {category: Category.AUTHENTICATION, name: 'login', label: 'Login', component: LoginDemo},
+  // {category: Category.AUTHENTICATION, name: 'signup', label: 'Signup', component: SignupDemo},
+  {category: Category.CORE, name: 'accordion', label: 'Accordion', component: AccordionDemo},
+  {category: Category.CORE, name: 'button', label: 'Button', component: ButtonDemo},
+  {category: Category.CORE, name: 'confirmation', label: 'Confirmation', component: ConfirmationDemo},
+  {category: Category.CORE, name: 'dialog', label: 'Dialog', component: DialogDemo},
+  {category: Category.CORE, name: 'form', label: 'Form', component: FormDemo},
+  {category: Category.CORE, name: 'grid', label: 'Grid', component: GridDemo},
+  {category: Category.CORE, name: 'horizontal-layout', label: 'Horizontal Layout', component: HorizontalLayoutDemo},
+  {category: Category.CORE, name: 'label', label: 'Label', component: LabelDemo},
+  {category: Category.CORE, name: 'menu', label: 'Menu', component: MenuDemo},
+  {category: Category.CORE, name: 'section', label: 'Section', component: SectionDemo},
+  {category: Category.CORE, name: 'select', label: 'Select', component: SelectFieldDemo},
+  {category: Category.CORE, name: 'side-panel', label: 'SidePanel', component: SidePanelDemo},
+  {category: Category.CORE, name: 'split-layout', label: 'Split Layout', component: SplitLayoutDemo},
+  {category: Category.CORE, name: 'stepflow', label: 'Step flow', component: StepFlowDemo},
+  {category: Category.CORE, name: 'tabs', label: 'Tabs', component: TabDemo},
+  {category: Category.CORE, name: 'take-photo', label: 'Take Photo', component: TakePhotoDemo},
+  {category: Category.CORE, name: 'text', label: 'Text', component: TextFieldDemo},
+  {category: Category.CORE, name: 'vertical-layout', label: 'Vertical Layout', component: VerticalLayoutDemo},
 ];
+const core_routes = routes.filter(e => e.category === Category.CORE);
+const authentication_routes = routes.filter(e => e.category === Category.AUTHENTICATION);
 const route = useRoute();
 const router = useRouter();
 
@@ -81,8 +104,7 @@ const getComponent = computed(() => {
 }
 
 .widget-list-panel {
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
   flex-shrink: 0;
   padding-right: 16px;
 }

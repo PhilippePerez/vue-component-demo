@@ -11,6 +11,8 @@ const routes = [
     {path: '/grid', component: HomePage, name: 'grid'},
     {path: '/horizontal-layout', component: HomePage, name: 'horizontal-layout'},
     {path: '/label', component: HomePage, name: 'label'},
+    {path: '/login', component: HomePage, name: 'login'},
+    // {path: '/signup', component: HomePage, name: 'signup'},
     {path: '/menu', component: HomePage, name: 'menu'},
     {path: '/section', component: HomePage, name: 'section'},
     {path: '/select', component: HomePage, name: 'select'},

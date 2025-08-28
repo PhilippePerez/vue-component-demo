@@ -7,7 +7,7 @@
   "name": "vue-components-demo",
   "private": false,
   "type": "module",
-  "version": "0.1.32",
+  "version": "0.1.33",
   "exports": {
     ".": {
       "import": "./dist/vue-components-demo.mjs",
@@ -20,6 +20,8 @@
     "dev": "vite",
     "preview": "vite preview",
     "setup": "npm install",
+    "set-registry-local": "npm set registry http://localhost:4873",
+    "set-registry-global": "npm set registry https://registry.npmjs.org",
     "test": "vitest",
     "uninstall-library": "npm uninstall vue-component-toolkit",
     "install-library": "npm install vue-component-toolkit"
@@ -27,7 +29,7 @@
   "dependencies": {
     "highlight.js": "^11.11.1",
     "vue": "^3.5.12",
-    "vue-component-toolkit": "^0.1.32",
+    "vue-component-toolkit": "^0.1.33",
     "vue-i18n": "^11.0.0-beta.2",
     "vue-router": "^4.5.0"
   },
