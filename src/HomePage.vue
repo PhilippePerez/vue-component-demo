@@ -1,5 +1,5 @@
 <template>
-  <MainLayout title="Vue Components Showcase ( V 0.1.34 )">
+  <MainLayout title="Vue Components Showcase ( V 0.1.35 )">
     <HorizontalLayout style="flex-grow: 1;overflow: hidden;" align-y="stretch">
       <VerticalLayout :padding="false" class='widget-list-panel' align-x="stretch" align-y="stretch">
         <Accordion :selected="0" padding-off>
@@ -62,6 +62,7 @@ import SplitLayoutDemo from "@/demo/SplitLayoutDemo.vue";
 import LoginDemo from "@/demo/LoginDemo.vue";
 import SignupDemo from "@/demo/SignupDemo.vue";
 import LinearGaugeDemo from "@/demo/LinearGaugeDemo.vue";
+import CircularGaugeDemo from "@/demo/CircularGaugeDemo.vue";
 
 const Category = {
   AUTHENTICATION: "authentication",
@@ -89,6 +90,7 @@ const routes = [
   {category: Category.CORE, name: 'take-photo', label: 'Take Photo', component: TakePhotoDemo},
   {category: Category.CORE, name: 'text', label: 'Text', component: TextFieldDemo},
   {category: Category.CORE, name: 'vertical-layout', label: 'Vertical Layout', component: VerticalLayoutDemo},
+  {category: Category.DASHBOARD, name: 'circular-gauge', label: 'Circular Gauge', component: CircularGaugeDemo},
   {category: Category.DASHBOARD, name: 'linear-gauge', label: 'Linear Gauge', component: LinearGaugeDemo},
 ];
 const authentication_routes = routes.filter(e => e.category === Category.AUTHENTICATION);

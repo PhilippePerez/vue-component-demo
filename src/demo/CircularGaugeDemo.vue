@@ -1,16 +1,16 @@
 <template>
   <DemoTemplate :padding="false" align-y="start">
-    <CodeFragment src="/code/LinearGaugeDemo.txt"/>
+    <CodeFragment src="/code/CircularGaugeDemo.txt"/>
     <Card style="align-items: center;justify-content: center;">
       <HorizontalLayout>
         <VerticalLayout>
-          <LinearGauge v-model="value" unit="°C" color="#4F46E5"/>
-          <LinearGauge v-model="value2" unit="Kg" :min="10" :max="50"/>
-          <LinearGauge v-model="value3" unit="$" color="#4F46E5" :min="1000" :step="100" :max="5000"
+          <CircularGauge v-model="value" unit="°C" color="#4F46E5"/>
+          <CircularGauge v-model="value2" unit="Kg" :min="10" :max="50"/>
+          <CircularGauge v-model="value3" unit="$" color="#4F46E5" :min="1000" :step="100" :max="5000"
                        :format="formatTwoDecimals"/>
         </VerticalLayout>
         <VerticalLayout>
-          <LinearGauge :value="value3" unit="$" read-only :format="formatTwoDecimals" :min="1000" :max="5000"/>
+          <CircularGauge :value="value3" unit="$" read-only :format="formatTwoDecimals" :min="1000" :max="5000" />
         </VerticalLayout>
       </HorizontalLayout>
     </Card>
@@ -21,7 +21,7 @@
 import {
   Card,
   HorizontalLayout,
-  LinearGauge,
+  CircularGauge,
   VerticalLayout,
 } from "vue-component-toolkit/dist/vue-component-toolkit.js";
 import CodeFragment from "@/components/CodeFragment.vue";
