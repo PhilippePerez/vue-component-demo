@@ -1,0 +1,36 @@
+<template>
+    [...]
+        <SignupForm v-if="!submited" class="app-form" v-model="formData" @submit="sendFormToServer"
+                    @subscribe="login"/>
+    [...]
+</template>
+
+<script setup>
+import {
+  HorizontalLayout,
+  Card, 
+} from "vue-component-toolkit/dist/vue-component-toolkit.js";
+import CodeFragment from "@/components/CodeFragment.vue";
+import DemoTemplate from "@/DemoTemplate.vue";
+import {ref} from "vue";
+import SignupForm from "@/demo/authentication/SignupForm.vue";
+
+const error = ref(null);
+const submited = ref(false);
+const formData = ref({email: '', password: ''});
+
+const sendFormToServer = (data) => {
+  submited.value = true;
+}
+
+const login = () => {
+  console.log('One would here call the router');
+}
+</script>
+
+
+<style scoped>
+.app-form {
+  min-width: 450px;
+}
+</style>

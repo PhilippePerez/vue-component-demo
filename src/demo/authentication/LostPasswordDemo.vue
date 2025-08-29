@@ -22,7 +22,7 @@ import CodeFragment from "@/components/CodeFragment.vue";
 import DemoTemplate from "@/DemoTemplate.vue";
 import {ref} from "vue";
 import {useRoute} from "vue-router";
-import SignupForm from "@/demo/authentication/SignupForm.vue";
+import SignupForm from "../../../../widgets/vue-widgets/src/components/authentication/SignupForm.vue";
 import LostPasswordForm from "@/demo/authentication/LostPasswordForm.vue";
 import TwoFactorForm from "@/demo/authentication/TwoFactorForm.vue";
 

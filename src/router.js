@@ -15,6 +15,7 @@ const routes = [
     {path: '/label', component: HomePage, name: 'label'},
     {path: '/linear-gauge', component: HomePage, name: 'linear-gauge'},
     {path: '/login', component: HomePage, name: 'login'},
+    {path: '/signup', component: HomePage, name: 'signup'},
     {path: '/menu', component: HomePage, name: 'menu'},
     {path: '/section', component: HomePage, name: 'section'},
     {path: '/select', component: HomePage, name: 'select'},

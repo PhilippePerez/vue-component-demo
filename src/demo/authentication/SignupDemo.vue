@@ -1,10 +1,10 @@
 <template>
   <DemoTemplate :padding="false" align-y="start">
-    <CodeFragment src="/code/LoginDemo.txt"/>
+    <CodeFragment src="/code/SignupDemo.txt"/>
     <Card style="align-items: center;justify-content: center;">
       <VerticalLayout>
-        <LoginForm v-if="!submited" class="app-form" v-model="formData" @submit="sendFormToServer"
-                   @subscribe="subscribe" @forgot="forgot"/>
+        <SignupForm v-if="!submited" class="app-form" v-model="formData" @submit="sendFormToServer"
+                    @subscribe="login"/>
         <VerticalLayout v-if="submited">
           Those form data have been sent to the server
           {{ formData }}
@@ -16,7 +16,7 @@
 
 <script setup>
 import {
-  LoginForm,
+  SignupForm,
   VerticalLayout,
   Card,
 } from "vue-component-toolkit/dist/vue-component-toolkit.js";
@@ -32,13 +32,11 @@ const sendFormToServer = (data) => {
   submited.value = true;
 }
 
-const subscribe = () => {
+const login = () => {
   console.log('One would here call the router');
 }
-const forgot = (data) => {
-  console.log('One would here call the router ' + data);
-}
 </script>
+
 
 <style scoped>
 .app-form {

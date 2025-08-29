@@ -1,5 +1,5 @@
 <template>
-  <MainLayout title="Vue Components Showcase ( V 0.1.36 )">
+  <MainLayout title="Vue Components Showcase ( V 0.2.1 )">
     <HorizontalLayout style="flex-grow: 1;overflow: hidden;" align-y="stretch">
       <VerticalLayout :padding="false" class='widget-list-panel' align-x="stretch" align-y="stretch">
         <Accordion :selected="0" padding-off>
@@ -60,7 +60,7 @@ import SectionDemo from "./demo/SectionDemo.vue";
 import StepFlowDemo from "./demo/StepFlowDemo.vue";
 import SplitLayoutDemo from "@/demo/SplitLayoutDemo.vue";
 import LoginDemo from "@/demo/authentication/LoginDemo.vue";
-import SignupDemo from "@/demo/SignupDemo.vue";
+import SignupDemo from "@/demo/authentication/SignupDemo.vue";
 import LinearGaugeDemo from "@/demo/LinearGaugeDemo.vue";
 import CircularGaugeDemo from "@/demo/CircularGaugeDemo.vue";
 
@@ -71,7 +71,7 @@ const Category = {
 };
 const routes = [
   {category: Category.AUTHENTICATION, name: 'login', label: 'Login', component: LoginDemo},
-  // {category: Category.AUTHENTICATION, name: 'signup', label: 'Signup', component: SignupDemo},
+  {category: Category.AUTHENTICATION, name: 'signup', label: 'Signup', component: SignupDemo},
   {category: Category.CORE, name: 'accordion', label: 'Accordion', component: AccordionDemo},
   {category: Category.CORE, name: 'button', label: 'Button', component: ButtonDemo},
   {category: Category.CORE, name: 'confirmation', label: 'Confirmation', component: ConfirmationDemo},
