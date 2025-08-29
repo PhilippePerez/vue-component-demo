@@ -27,7 +27,6 @@ import {ref} from "vue";
 const error = ref(null);
 const submited = ref(false);
 const formData = ref({email: '', password: ''});
-
 const sendFormToServer = (data) => {
   submited.value = true;
 }
@@ -36,7 +35,7 @@ const subscribe = () => {
   console.log('One would here call the router');
 }
 const forgot = (data) => {
-  console.log('One would here call the router '+data);
+  console.log('One would here call the router ' + data);
 }
 </script>
 

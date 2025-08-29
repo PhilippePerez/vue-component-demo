@@ -1,5 +1,5 @@
 <template>
-  <MainLayout title="Vue Components Showcase ( V 0.1.35 )">
+  <MainLayout title="Vue Components Showcase ( V 0.1.36 )">
     <HorizontalLayout style="flex-grow: 1;overflow: hidden;" align-y="stretch">
       <VerticalLayout :padding="false" class='widget-list-panel' align-x="stretch" align-y="stretch">
         <Accordion :selected="0" padding-off>
@@ -59,7 +59,7 @@ import AccordionDemo from "./demo/AccordionDemo.vue";
 import SectionDemo from "./demo/SectionDemo.vue";
 import StepFlowDemo from "./demo/StepFlowDemo.vue";
 import SplitLayoutDemo from "@/demo/SplitLayoutDemo.vue";
-import LoginDemo from "@/demo/LoginDemo.vue";
+import LoginDemo from "@/demo/authentication/LoginDemo.vue";
 import SignupDemo from "@/demo/SignupDemo.vue";
 import LinearGaugeDemo from "@/demo/LinearGaugeDemo.vue";
 import CircularGaugeDemo from "@/demo/CircularGaugeDemo.vue";
