@@ -1,5 +1,5 @@
 <template>
-  <MainLayout title="Vue Components Showcase ( V 0.2.1 )">
+  <MainLayout title="Vue Components Showcase ( V 0.2.2 )">
     <HorizontalLayout style="flex-grow: 1;overflow: hidden;" align-y="stretch">
       <VerticalLayout :padding="false" class='widget-list-panel' align-x="stretch" align-y="stretch">
         <Accordion :selected="0" padding-off>
@@ -63,6 +63,7 @@ import LoginDemo from "@/demo/authentication/LoginDemo.vue";
 import SignupDemo from "@/demo/authentication/SignupDemo.vue";
 import LinearGaugeDemo from "@/demo/LinearGaugeDemo.vue";
 import CircularGaugeDemo from "@/demo/CircularGaugeDemo.vue";
+import LostPasswordDemo from "@/demo/authentication/LostPasswordDemo.vue";
 
 const Category = {
   AUTHENTICATION: "authentication",
@@ -72,6 +73,7 @@ const Category = {
 const routes = [
   {category: Category.AUTHENTICATION, name: 'login', label: 'Login', component: LoginDemo},
   {category: Category.AUTHENTICATION, name: 'signup', label: 'Signup', component: SignupDemo},
+  {category: Category.AUTHENTICATION, name: 'lost-password', label: 'Lost password', component: LostPasswordDemo},
   {category: Category.CORE, name: 'accordion', label: 'Accordion', component: AccordionDemo},
   {category: Category.CORE, name: 'button', label: 'Button', component: ButtonDemo},
   {category: Category.CORE, name: 'confirmation', label: 'Confirmation', component: ConfirmationDemo},
