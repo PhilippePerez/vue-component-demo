@@ -7,7 +7,7 @@
   "name": "vue-components-demo",
   "private": false,
   "type": "module",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "exports": {
     ".": {
       "import": "./dist/vue-components-demo.mjs",
@@ -29,7 +29,7 @@
   "dependencies": {
     "highlight.js": "^11.11.1",
     "vue": "^3.5.12",
-    "vue-component-toolkit": "^0.2.2",
+    "vue-component-toolkit": "^0.2.3",
     "vue-i18n": "^11.0.0-beta.2",
     "vue-router": "^4.5.0"
   },
